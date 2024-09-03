@@ -1,0 +1,51 @@
+<div >
+    
+    <div class="upload-container">
+        <h1 >OCR</h1>
+        <div class="upload-section">
+            <Label>Upload Image : </Label>
+            <input type="file" value="select" #selectFile name="aadhar-photo" (change)="onFileSelected($event)" ><br><br>
+        </div>
+    </div>
+    <div *ngIf="showPic">
+    <div class="image-container" >
+         <img [src]=pics[0].url width="400px" height="300px" class="dia-img"><br>
+         <!-- <img src="../../../assets/public/1.png" width="1000px" height="450px" class="dia-img"> -->
+    </div>
+    <div class="submit-container">
+        <button (click)="sendImage()">Submit</button>
+    </div>
+</div>
+    
+    <div class="container">
+        <div class="form-container">
+    <form>
+        <span>EasyOCR</span>
+        <label>Name: </label>
+        <input type="text" name="easyName">
+        <label>Number: </label>
+        <input type="text" name="easyNumber">
+        <label>DOB: </label>
+        <input type="text" name="easyDob">
+        <label>Gender: </label>
+        <input type="text" name="easyGender">
+        <label>Address: </label>
+        <input type="text" name="easyAddress">
+    </form>
+    </div>
+    <div class="form-container">
+        <form>
+            <span>Something Tech</span>
+            <label>Name: </label>
+            <input type="text" name="name">
+            <label>Number: </label>
+            <input type="text" name="number">
+            <label>DOB: </label>
+            <input type="text" name="dob">
+            <label>Gender: </label>
+            <input type="text" name="gender">
+            <label>Address: </label>
+            <input type="text" name="address">     </form>
+        </div>
+</div>
+</div>
