@@ -4,20 +4,34 @@
         <h1 >OCR</h1>
         <div class="upload-section">
             <Label>Upload Image : </Label>
-            <input type="file" value="select" #selectFile name="aadhar-photo" (change)="onFileSelected($event)" ><br><br>
+            <input type="file" multiple value="select" #selectFile name="aadhar-photo" (change)="onFileSelected($event)" ><br><br>
         </div>
     </div>
     <div *ngIf="showPic">
-    <div class="image-container" >
-         <img [src]=pics[0].url width="400px" height="300px" class="dia-img"><br>
-         <!-- <img src="../../../assets/public/1.png" width="1000px" height="450px" class="dia-img"> -->
+
+    <div class="flex-container" >
+        
+        <img *ngFor="let file of pics; let i = index" [src]="file.url" alt="Image">
+
     </div>
     <div class="submit-container">
         <button (click)="sendImage()">Submit</button>
     </div>
 </div>
+<div class="form-container">
+    <form>
+        <span>Comparision Results</span>
+        <label>Field 1:</label>
+        <input type="text" name="field1">
+        <label>Field 2: </label>
+        <input type="text" name="field2">
+        <label>Field 3: </label>
+        <input type="text" name="field3">
+    </form>
+    </div>
+
     
-    <div class="container">
+    <!-- <div class="container">
         <div class="form-container">
     <form>
         <span>EasyOCR</span>
@@ -47,5 +61,5 @@
             <label>Address: </label>
             <input type="text" name="address">     </form>
         </div>
-</div>
+</div> -->
 </div>

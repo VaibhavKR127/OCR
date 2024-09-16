@@ -36,14 +36,23 @@ export class UploadComponent implements OnInit{
 
   sendImage(){
     const formData = new FormData();
-    formData.append(
-      'imgfile',
-      this.pics[0].file,
-      this.pics[0].file.name
-    )
+    for(var i = 0;i<this.pics.length;i++){
+      formData.append(
+        'imgfile',
+      this.pics[i].file,
+      this.pics[i].file.name
+      );
+      }
+
+      // formData.forEach((data) => console.log(data));
+    
     let data = this.apiServ.sendImageData(formData);
     console.log(data);
   }
+
+  // removeImg(file:FileHandle){
+  //   console.log("Hi")
+  // }
 
 
 }
